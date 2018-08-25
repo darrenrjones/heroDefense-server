@@ -1,10 +1,4 @@
-# Thinkful Backend Template
-
-A template for developing and deploying Node.js apps.
-
-## Getting started
-
-### Setting up a project
+# Backend Template
 
 * Move into your projects directory: `cd ~/YOUR_PROJECTS_DIRECTORY`
 * Clone this repository: `git clone https://github.com/Thinkful-Ed/backend-template YOUR_PROJECT_NAME`
@@ -22,8 +16,6 @@ A template for developing and deploying Node.js apps.
     * Automatically restarts when any of your files change
 
 ## Databases
-
-By default, the template is configured to connect to a MongoDB database using Mongoose.  It can be changed to connect to a PostgreSQL database using Knex by replacing any imports of `db-mongoose.js` with imports of `db-knex.js`, and uncommenting the Postgres `DATABASE_URL` lines in `config.js`.
 
 ## Deployment
 
