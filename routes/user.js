@@ -13,15 +13,6 @@ const nonStringField = require('../helper/nonStringFields');
 const trimmedFields = require('../helper/trimmedFields');
 const tooBigOrTooSmall = require('../helper/tooBigOrTooSmall');
 
-
-router.get('/', (req,res,next) => {
-  User.find()
-    .then(result => {
-      res.json(result);
-    });
-});
-
-
 router.post('/register', (req, res, next) => {
   
   //checks for any missing fields
@@ -37,14 +28,10 @@ router.post('/register', (req, res, next) => {
   tooBigOrTooSmall(req);
 
   // Create new user in DB
-  let {username, password} = req.body;
-
-  
+  let {username, password} = req.body;  
   
   return User.hashPassword(password)
-    .then(digest => {
-      console.log(digest);
-      
+    .then(digest => {      
       const newUser = {
         username,
         password: digest,
@@ -59,13 +46,6 @@ router.post('/register', (req, res, next) => {
     .catch(err => {
       let checkErrorAnswer = checkError(err);
       next(checkErrorAnswer);
-    });
-});
-
-router.get('/', (req,res,next) => {
-  User.find()
-    .then(result => {
-      res.json(result);
     });
 });
 
